@@ -9,6 +9,7 @@ const User = require("./models/user")
 const userRoute = require("./Routes/users")
 const cookieParser = require('cookie-parser')
 const { redirect } = require('express/lib/response')
+const PORT =  process.env.PORT || 8000;
 
 dotenv.config();
 
@@ -125,4 +126,4 @@ app.get('/:id/duplicate',async (req, res)=>{
 
 
 app.use("/users",userRoute);
-app.listen(80)
+app.listen(PORT);
